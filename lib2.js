@@ -45,10 +45,17 @@ console.log(library)
 
 //UPDATING THE LIBRARY
 function updateLib(bookId, newAuthor, newTitle){
-
+    let book = library.find(books => books.bookId === bookId)
+    if (book){
+        book.title = newTitle || book.title;
+        book.author = newAuthor || book.author;
+        console.log(book);
+        console.log(`A new update has occurred in the library`)
+    }
+    return null;
 }
-
-
+updateLib(101, 'jason', 'tails apart')
+console.log(library)
 
 
 
